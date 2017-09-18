@@ -1,0 +1,7 @@
+@import "iconFont.css";
+
+.hello {
+    color: red;
+    font-family: 'icomoon';
+    /*background: url('./image.png');*/
+}
