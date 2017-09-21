@@ -13,7 +13,15 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
-        hot: true
+        hot: true,
+        proxy: {
+            // 请求到 '/' 下 的请求都会被代理到 target： http://10.187.134.10:80/ 中
+            '*': {
+                target: 'http://10.187.134.10:80/',
+                secure: false, // 接受 运行在 https 上的服务
+                changeOrigin: true
+            }
+        }
     },
     output: {
         filename: '[name].bundle.js',
